@@ -470,17 +470,13 @@ export default function App() {
       <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black shadow-lg shadow-amber-500/20">
-              VB
+            <div className="w-9 h-9 rounded-xl bg-slate-700 text-slate-950 flex items-center justify-center font-black shadow-lg shadow-slate-700/20">
+              &#x1F3D0;
             </div>
             <div>
               <h1 className="font-bold text-base sm:text-lg leading-tight tracking-tight">
-                CourtSide Volleyball Bingo
+                Clinic Bingo
               </h1>
-              <div className="flex items-center gap-1.5 text-xs text-emerald-400">
-                <Wifi className="w-3 h-3" />
-                <span>Live Supabase Sync</span>
-              </div>
             </div>
           </div>
 
@@ -488,7 +484,7 @@ export default function App() {
             <button
               onClick={() => setView('player')}
               className={`px-3.5 py-1.5 rounded-lg text-sm font-medium transition ${view === 'player'
-                ? 'bg-amber-500 text-slate-950 font-semibold shadow'
+                ? 'bg-mauve-300 text-slate-950 font-semibold shadow'
                 : 'text-slate-300 hover:text-white'
                 }`}
             >
@@ -497,7 +493,7 @@ export default function App() {
             <button
               onClick={() => setView('admin')}
               className={`px-3.5 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1.5 transition ${view === 'admin'
-                ? 'bg-amber-500 text-slate-950 font-semibold shadow'
+                ? 'bg-mauve-300 text-slate-950 font-semibold shadow'
                 : 'text-slate-300 hover:text-white'
                 }`}
             >
@@ -527,7 +523,7 @@ export default function App() {
           ) : !currentPlayer ? (
             <div className="max-w-md mx-auto mt-8 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
               <div className="text-center mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-400 flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 rounded-2xl bg-mauve-300/15 text-mauve-200 flex items-center justify-center mx-auto mb-3">
                   <Trophy className="w-6 h-6" />
                 </div>
                 <h2 className="text-xl font-bold">Player Check-In</h2>
@@ -549,7 +545,7 @@ export default function App() {
                       placeholder="e.g. Jordan Taylor"
                       value={loginName}
                       onChange={(e) => setLoginName(e.target.value)}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-amber-500"
+                      className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-mauve-300"
                     />
                   </div>
                 </div>
@@ -566,7 +562,7 @@ export default function App() {
                       placeholder="e.g. (312) 555-0199"
                       value={loginPhone}
                       onChange={(e) => setLoginPhone(e.target.value)}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-amber-500"
+                      className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-mauve-300"
                     />
                   </div>
                 </div>
@@ -579,26 +575,11 @@ export default function App() {
 
                 <button
                   type="submit"
-                  className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20"
+                  className="w-full bg-mauve-300 hover:bg-mauve-200 text-slate-950 font-bold py-2.5 rounded-xl transition shadow-lg shadow-mauve-300/20"
                 >
                   Enter Court
                 </button>
               </form>
-
-              {/* Quick Preview of Level Rules */}
-              <div className="mt-6 pt-5 border-t border-slate-800 space-y-2.5 text-xs text-slate-400">
-                <p className="font-semibold text-slate-300 uppercase tracking-wider text-[11px]">
-                  How Squares Count
-                </p>
-                <p>
-                  <span className="text-emerald-400 font-semibold">Beginner:</span> Only mark a square if the
-                  ball remains in play (next teammate touches it, or it goes over and in).
-                </p>
-                <p>
-                  <span className="text-indigo-400 font-semibold">Intermediate:</span> Only mark a square if
-                  your team scores the point on that rally.
-                </p>
-              </div>
             </div>
           ) : (
             <div className="space-y-4">
@@ -617,7 +598,7 @@ export default function App() {
                     </span>
                   </div>
                   <p className="text-xs text-slate-400 mt-0.5">
-                    Score: <strong className="text-amber-400">{currentPlayer.total_points || 0} pts</strong> •{' '}
+                    Score: <strong className="text-mauve-200">{currentPlayer.total_points || 0} pts</strong> •{' '}
                     Bingos: <strong className="text-white">{currentPlayer.bingos || 0}</strong> •{' '}
                     Coveralls: <strong className="text-white">{currentPlayer.coveralls || 0}</strong>
                   </p>
@@ -641,7 +622,7 @@ export default function App() {
                       title="You can only request a new card after completing a Bingo (5-in-a-row) or Coverall."
                       className="bg-slate-800/80 border border-slate-700 text-slate-400 text-xs px-3.5 py-2 rounded-xl flex items-center gap-1.5 select-none"
                     >
-                      <Lock className="w-3.5 h-3.5 text-amber-400" />
+                      <Lock className="w-3.5 h-3.5 text-mauve-200" />
                       <span>Card Locked Until Bingo / Coverall</span>
                     </div>
                   )}
@@ -676,11 +657,11 @@ export default function App() {
 
               {/* Win Banner */}
               {currentPlayer.active_card && (cardStatus.bingoCount > 0 || cardStatus.isCoverall) && (
-                <div className="bg-gradient-to-r from-amber-500/20 via-emerald-500/20 to-amber-500/20 border border-amber-400/50 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3">
+                <div className="bg-gradient-to-r from-mauve-300/20 via-emerald-500/20 to-mauve-300/20 border border-mauve-200/50 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <Flame className="w-6 h-6 text-amber-400 shrink-0" />
+                    <Flame className="w-6 h-6 text-mauve-200 shrink-0" />
                     <div>
-                      <h3 className="font-bold text-amber-300">
+                      <h3 className="font-bold text-mauve-300">
                         {cardStatus.isCoverall
                           ? 'COVERALL COMPLETE! All 25 Squares Marked!'
                           : `BINGO! (${cardStatus.bingoCount} line${cardStatus.bingoCount > 1 ? 's' : ''} completed)`}
@@ -698,7 +679,7 @@ export default function App() {
               {/* 5x5 Bingo Grid */}
               {!currentPlayer.active_card ? (
                 <div className="bg-slate-900 border border-dashed border-slate-700 rounded-2xl p-12 text-center">
-                  <Trophy className="w-10 h-10 text-amber-400 mx-auto mb-3" />
+                  <Trophy className="w-10 h-10 text-mauve-200 mx-auto mb-3" />
                   <h3 className="text-lg font-bold">Ready to Take the Court?</h3>
                   <p className="text-sm text-slate-400 max-w-md mx-auto mt-1 mb-5">
                     Click below to generate your personalized 5×5{' '}
@@ -707,7 +688,7 @@ export default function App() {
                   </p>
                   <button
                     onClick={handleDealOrClaimCard}
-                    className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded-xl inline-flex items-center gap-2 shadow-lg shadow-amber-500/20"
+                    className="bg-mauve-300 hover:bg-mauve-200 text-slate-950 font-bold px-6 py-3 rounded-xl inline-flex items-center gap-2 shadow-lg shadow-mauve-300/20"
                   >
                     <RefreshCw className="w-4 h-4" />
                     Deal My 5×5 Card
@@ -722,7 +703,7 @@ export default function App() {
                         key={idx}
                         onClick={() => handleToggleSquare(idx)}
                         className={`relative aspect-square rounded-xl sm:rounded-2xl p-1.5 sm:p-3 flex flex-col justify-between border transition cursor-pointer select-none ${sq.isFree
-                          ? 'bg-amber-500/20 border-amber-400 text-amber-200'
+                          ? 'bg-mauve-300/20 border-mauve-200 text-mauve-200'
                           : sq.marked
                             ? isWinning
                               ? 'bg-emerald-500/30 border-emerald-400 text-white shadow-lg shadow-emerald-500/15'
@@ -741,7 +722,7 @@ export default function App() {
                               setSelectedSquare(sq);
                             }}
                             title="View skill description"
-                            className="p-1 rounded-lg bg-slate-950/60 hover:bg-slate-950 text-slate-300 hover:text-amber-400 transition shrink-0"
+                            className="p-1 rounded-lg bg-slate-950/60 hover:bg-slate-950 text-slate-300 hover:text-mauve-200 transition shrink-0"
                           >
                             <Info className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                           </button>
@@ -754,7 +735,7 @@ export default function App() {
                         <div className="flex justify-center h-3.5">
                           {sq.marked && (
                             <CheckCircle2
-                              className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${sq.isFree ? 'text-amber-400' : 'text-emerald-400'
+                              className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${sq.isFree ? 'text-mauve-200' : 'text-emerald-400'
                                 }`}
                             />
                           )}
@@ -774,7 +755,7 @@ export default function App() {
         <main className="max-w-6xl mx-auto px-4 py-6">
           {!adminUnlocked ? (
             <div className="max-w-sm mx-auto mt-10 bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
-              <ShieldCheck className="w-10 h-10 text-amber-400 mx-auto mb-2" />
+              <ShieldCheck className="w-10 h-10 text-mauve-200 mx-auto mb-2" />
               <h2 className="text-lg font-bold">Coach / Organizer Access</h2>
               <p className="text-xs text-slate-400 mt-1 mb-4">Enter organizer PIN</p>
               <form
@@ -794,12 +775,12 @@ export default function App() {
                   placeholder="PIN"
                   value={pinInput}
                   onChange={(e) => setPinInput(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-center tracking-widest text-sm focus:outline-none focus:border-amber-500"
+                  className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-center tracking-widest text-sm focus:outline-none focus:border-mauve-300"
                 />
                 {pinError && <p className="text-xs text-rose-400">{pinError}</p>}
                 <button
                   type="submit"
-                  className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2.5 rounded-xl text-sm"
+                  className="w-full bg-mauve-300 hover:bg-mauve-200 text-slate-950 font-bold py-2.5 rounded-xl text-sm"
                 >
                   Unlock Dashboard
                 </button>
@@ -812,7 +793,7 @@ export default function App() {
                 {/* Preregister Players */}
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4">
                   <div className="flex items-center gap-2">
-                    <UserPlus className="w-5 h-5 text-amber-400" />
+                    <UserPlus className="w-5 h-5 text-mauve-200" />
                     <h3 className="font-bold">Preregister Players & Assign Skill Level</h3>
                   </div>
 
@@ -844,7 +825,7 @@ export default function App() {
                       </select>
                       <button
                         type="submit"
-                        className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3.5 py-2 rounded-xl text-sm"
+                        className="bg-mauve-300 hover:bg-mauve-200 text-slate-950 font-bold px-3.5 py-2 rounded-xl text-sm"
                       >
                         Add
                       </button>
@@ -934,7 +915,7 @@ export default function App() {
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-amber-400" />
+                    <Award className="w-5 h-5 text-mauve-200" />
                     <h3 className="font-bold text-base">Live Player Leaderboard & Card Progress</h3>
                   </div>
 
@@ -1013,7 +994,7 @@ export default function App() {
                               </td>
                               <td className="py-2.5 px-3 text-center font-semibold">{p.bingos || 0}</td>
                               <td className="py-2.5 px-3 text-center font-semibold">{p.coveralls || 0}</td>
-                              <td className="py-2.5 px-3 text-right font-bold text-amber-400">
+                              <td className="py-2.5 px-3 text-right font-bold text-mauve-200">
                                 {p.total_points || 0}
                               </td>
                               <td className="py-2.5 px-3 text-right">
@@ -1051,7 +1032,7 @@ export default function App() {
           >
             <div className="flex items-start justify-between gap-3">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-amber-400">
+                <span className="text-xs font-semibold uppercase tracking-wider text-mauve-200">
                   {selectedSquare.category}
                 </span>
                 <h3 className="text-lg font-bold mt-0.5">{selectedSquare.title}</h3>
@@ -1080,7 +1061,7 @@ export default function App() {
 
             <button
               onClick={() => setSelectedSquare(null)}
-              className="mt-6 w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2.5 rounded-xl text-sm"
+              className="mt-6 w-full bg-mauve-300 hover:bg-mauve-200 text-slate-950 font-bold py-2.5 rounded-xl text-sm"
             >
               Got It
             </button>
